@@ -16,8 +16,11 @@ const Projects = ({
   return (
     <>
       <div id="projects"></div>
-      <div className="mx-5 flex flex-col bg-inherit">
-        <div className="mx-2 my-4 ">
+      <div className="mx-5 flex flex-col bg-inherit text-center">
+        <h3 id="projects" className="text-2xl font-bold">
+          Projects
+        </h3>
+        <div className="m-2 p-2 text-center">
           <a
             className="cursor-pointer"
             onClick={() => {
@@ -27,7 +30,7 @@ const Projects = ({
                 setWidth(600),
                 setTitle("Fjällen"),
                 setDescription(
-                  "Fjällen is an map app built with JavaScript/React/NextJs where users can find ski tours/hikes near them."
+                  "Fjällen is built with JavaScript/React/Nextjs. On Fjällen users can find nearby ski tours and hikes with full routes."
                 ),
                 setLink("https://fjaellen.com");
             }}
@@ -40,30 +43,7 @@ const Projects = ({
             ></Image>
           </a>
         </div>
-        <div className="mx-2 my-4">
-          <a
-            className="cursor-pointer"
-            onClick={() => {
-              setOpenModal(true),
-                setImage(hjalmarxyzPic),
-                setHeight(332),
-                setWidth(600),
-                setTitle("Hjalmar.xyz"),
-                setDescription(
-                  "This website is built with JavaScript/Nextjs/Headlessui, I'll fill it with more stuff when time allows"
-                ),
-                setLink("");
-            }}
-          >
-            <Image
-              src={hjalmarxyzPic}
-              height={332}
-              width={600}
-              alt="Cafesurfers"
-            ></Image>
-          </a>
-        </div>
-        <div className="mx-2 my-4">
+        <div className="m-2 p-2 text-center">
           <a
             className=" cursor-pointer"
             onClick={() => {
@@ -73,7 +53,7 @@ const Projects = ({
                 setWidth(600),
                 setTitle("Talentforms"),
                 setDescription(
-                  "Talenforms was an CRUD app built with JavaScript/jQuery where companies(users) could create a page for their company and add/update/delete job openings. Talentforms is not online anymore."
+                  "Talenforms was built with JavaScript/jQuery. With Talenforms companies could create a company page with their own url and add/update/delete job openings that page visitors could apply to. Talentforms is not online anymore."
                 ),
                 setLink("https://github.com/Hjalmarandersson/talentforms");
             }}
@@ -87,7 +67,7 @@ const Projects = ({
             ></Image>
           </a>
         </div>
-        <div className="mx-2 my-4 ">
+        <div className="m-2 p-2 text-center">
           <a
             className="cursor-pointer"
             onClick={() => {
@@ -97,13 +77,36 @@ const Projects = ({
                 setWidth(600),
                 setTitle("Cafesurfer"),
                 setDescription(
-                  "Cafesurfer was an app built with JavaScript where users could share and vote on their favorite working/studying cafés. Cafesurfer is not online anymore."
+                  "Cafesurfer was built with JavaScript. With Cafesurfer users could find, share, and vote on their favorite working/studying cafés. Cafesurfer is not online anymore."
                 ),
                 setLink("https://github.com/Hjalmarandersson/cafesurfer");
             }}
           >
             <Image
               src={cafesurferPic}
+              height={332}
+              width={600}
+              alt="Cafesurfers"
+            ></Image>
+          </a>
+        </div>
+        <div className="m-2 p-2 text-center">
+          <a
+            className="cursor-pointer"
+            onClick={() => {
+              setOpenModal(true),
+                setImage(hjalmarxyzPic),
+                setHeight(332),
+                setWidth(600),
+                setTitle("hjalmar.xyz"),
+                setDescription(
+                  "Hjalmar.xyz (this website) is quickly trown together with JavaScript/Nextjs/Headlessui/tailwindcss, I'll update it when time allows."
+                ),
+                setLink("");
+            }}
+          >
+            <Image
+              src={hjalmarxyzPic}
               height={332}
               width={600}
               alt="Cafesurfers"

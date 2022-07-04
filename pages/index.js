@@ -29,7 +29,7 @@ export default function Home() {
         <meta charSet="utf-8"></meta>
         <meta name="language" content="English"></meta>
       </Head>
-      <div className="bg-zinc-900 flex flex-col items-center h-screen w-full">
+      <div className="bg-black flex flex-col items-center h-screen w-full">
         <Nav />
         <Hero />
         <Projects

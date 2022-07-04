@@ -3,15 +3,10 @@
 @tailwind utilities;
 
 html{
-    --tw-bg-opacity: 1;
-    background-color:rgb(24 24 27 / var(--tw-bg-opacity));
+    background-color: black;
     font-family: monospace;
 }
 
 a, p, h1, h2, h3, h4, h5, h6,button {
     color: white;
-}
-
-.flex-grow-4{
-    flex-grow: 4;
 }
