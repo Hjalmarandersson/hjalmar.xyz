@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import profilepic from "/public/hjalmar_bw.jpg";
 
 const Nav = () => {
   return (
     <div className="fixed h-auto p-2 z-10 flex w-full shadow-sm justify-center bg-inherit">
       <div className="flex flex-row justify-center items-center">
         <Image
-          src={"/../public/hjalmar_bw.jpg"}
+          src={profilepic}
           objectFit="contain"
           width={50}
           height={50}

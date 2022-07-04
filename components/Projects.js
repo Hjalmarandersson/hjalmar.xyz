@@ -1,4 +1,8 @@
 import Image from "next/dist/client/image";
+import fjaellenPic from "/public/fjaellen.jpg";
+import cafesurferPic from "/public/cafesurfers.jpg";
+import hjalmarxyzPic from "/public/hjalmar-xyz.jpg";
+import talentformPix from "/public/talentforms.jpg";
 
 const Projects = ({
   setImage,
@@ -18,7 +22,7 @@ const Projects = ({
             className="cursor-pointer"
             onClick={() => {
               setOpenModal(true),
-                setImage("/../public/fjaellen.jpg"),
+                setImage(fjaellenPic),
                 setHeight(332),
                 setWidth(600),
                 setTitle("Fjällen"),
@@ -29,7 +33,7 @@ const Projects = ({
             }}
           >
             <Image
-              src={"/../public/fjaellen.jpg"}
+              src={fjaellenPic}
               height={332}
               width={600}
               alt="Fjällen"
@@ -41,7 +45,7 @@ const Projects = ({
             className="cursor-pointer"
             onClick={() => {
               setOpenModal(true),
-                setImage("/../public/hjalmar-xyz.jpg"),
+                setImage(hjalmarxyzPic),
                 setHeight(332),
                 setWidth(600),
                 setTitle("Hjalmar.xyz"),
@@ -52,19 +56,19 @@ const Projects = ({
             }}
           >
             <Image
-              src={"/../public/hjalmar-xyz.jpg"}
+              src={hjalmarxyzPic}
               height={332}
               width={600}
               alt="Cafesurfers"
             ></Image>
           </a>
         </div>
-        <div className="relative mx-2 my-4">
+        <div className="mx-2 my-4">
           <a
             className=" cursor-pointer"
             onClick={() => {
               setOpenModal(true),
-                setImage("/../public/talentforms.jpg"),
+                setImage(talentformPix),
                 setHeight(332),
                 setWidth(600),
                 setTitle("Talentforms"),
@@ -75,7 +79,7 @@ const Projects = ({
             }}
           >
             <Image
-              src={"/../public/talentforms.jpg"}
+              src={talentformPix}
               height={333}
               width={592}
               alt="Talentforms"
@@ -88,7 +92,7 @@ const Projects = ({
             className="cursor-pointer"
             onClick={() => {
               setOpenModal(true),
-                setImage("/../public/cafesurfers.jpg"),
+                setImage(cafesurferPic),
                 setHeight(332),
                 setWidth(600),
                 setTitle("Cafesurfer"),
@@ -99,7 +103,7 @@ const Projects = ({
             }}
           >
             <Image
-              src={"/../public/cafesurfers.jpg"}
+              src={cafesurferPic}
               height={332}
               width={600}
               alt="Cafesurfers"
