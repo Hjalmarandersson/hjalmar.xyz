@@ -1,8 +1,8 @@
 import Image from "next/dist/client/image";
-import fjaellenPic from "/public/fjaellen.jpg";
-import cafesurferPic from "/public/cafesurfers.jpg";
-import hjalmarxyzPic from "/public/hjalmar-xyz.jpg";
-import talentformPix from "/public/talentforms.jpg";
+import fjaellenPic from "../public/fjaellen.jpg";
+import cafesurferPic from "../public/cafesurfers.jpg";
+import hjalmarxyzPic from "../public/hjalmar-xyz.jpg";
+import talentformPix from "../public/talentforms.jpg";
 
 const Projects = ({
   setImage,
