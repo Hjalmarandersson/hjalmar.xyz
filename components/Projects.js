@@ -29,7 +29,7 @@ const Projects = ({
                 setWidth(600),
                 setTitle("Fjällen"),
                 setDescription(
-                  "Fjällen is built with JavaScript/React/Nextjs. Fjällen is a map with Scandinavian skitours and hikes. Users can locate themself and find full routes and details of the hikes and skitours"
+                  "Fjällen is built with JavaScript/React/Nextjs. Fjällen is a map with Scandinavian skitours and hikes. Users can locate themself and find full routes and details of nearby hikes and skitours."
                 ),
                 setLink("https://fjaellen.com");
             }}
@@ -52,7 +52,7 @@ const Projects = ({
                 setWidth(600),
                 setTitle("Talentforms"),
                 setDescription(
-                  "Talenforms was built with JavaScript/jQuery/Bootstrap/Firebase. Talenforms was an CRUD app where companies(users) could create an page for their company and then add/uppdate/delete job openings that candidates could apply to. Talentforms is not online anymore."
+                  "Talentforms was built with JavaScript/jQuery/Bootstrap/Firebase. Talentforms was an CRUD app where companies(users) could create an page for their company and then add/uppdate/delete job openings that candidates could apply to. Talentforms is not online anymore."
                 ),
                 setLink("https://github.com/Hjalmarandersson/talentforms");
             }}
@@ -74,9 +74,9 @@ const Projects = ({
                 setImage(cafesurferPic),
                 setHeight(332),
                 setWidth(600),
-                setTitle("Cafesurfer"),
+                setTitle("Cafesurfers"),
                 setDescription(
-                  "Cafesurfer was built with JavaScript/Bootstrap/Firebase. Cafesurfer was an app where users could share and vote on their favorite working/studying cafés. Cafesurfer is not online anymore."
+                  "Cafesurfers was built with JavaScript/Bootstrap/Firebase. Cafesurfer was an app where users could share and vote on their favorite working/studying cafés. Cafesurfers is not online anymore."
                 ),
                 setLink("https://github.com/Hjalmarandersson/cafesurfer");
             }}
