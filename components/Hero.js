@@ -21,7 +21,7 @@ const Hero = () => {
           My code
         </a>
         <a
-          href="https://www.linkedin.com/in/hjalmarxyz/"
+          href="https://www.linkedin.com/in/hjalmarandersson/"
           className="mx-2 px-3 py-1 outline"
           rel="noreferrer"
           target={"_blank"}

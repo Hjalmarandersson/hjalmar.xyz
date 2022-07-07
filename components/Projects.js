@@ -1,7 +1,6 @@
 import Image from "next/dist/client/image";
 import fjaellenPic from "../public/fjaellen.jpg";
 import cafesurferPic from "../public/cafesurfers.jpg";
-import hjalmarxyzPic from "../public/hjalmar-xyz.jpg";
 import talentformPix from "../public/talentforms.jpg";
 
 const Projects = ({
@@ -30,7 +29,7 @@ const Projects = ({
                 setWidth(600),
                 setTitle("Fjällen"),
                 setDescription(
-                  "Fjällen is built with JavaScript/React/Nextjs. On Fjällen users can find nearby ski tours and hikes with full routes."
+                  "Fjällen is built with JavaScript/React/Nextjs. Fjällen is a map with Scandinavian skitours and hikes. Users can locate themself and find full routes and details of the hikes and skitours"
                 ),
                 setLink("https://fjaellen.com");
             }}
@@ -53,7 +52,7 @@ const Projects = ({
                 setWidth(600),
                 setTitle("Talentforms"),
                 setDescription(
-                  "Talenforms was built with JavaScript/jQuery. With Talenforms companies could create a company page with their own url and add/update/delete job openings that page visitors could apply to. Talentforms is not online anymore."
+                  "Talenforms was built with JavaScript/jQuery/Bootstrap/Firebase. Talenforms was an CRUD app where companies(users) could create an page for their company and then add/uppdate/delete job openings that candidates could apply to. Talentforms is not online anymore."
                 ),
                 setLink("https://github.com/Hjalmarandersson/talentforms");
             }}
@@ -77,36 +76,13 @@ const Projects = ({
                 setWidth(600),
                 setTitle("Cafesurfer"),
                 setDescription(
-                  "Cafesurfer was built with JavaScript. With Cafesurfer users could find, share, and vote on their favorite working/studying cafés. Cafesurfer is not online anymore."
+                  "Cafesurfer was built with JavaScript/Bootstrap/Firebase. Cafesurfer was an app where users could share and vote on their favorite working/studying cafés. Cafesurfer is not online anymore."
                 ),
                 setLink("https://github.com/Hjalmarandersson/cafesurfer");
             }}
           >
             <Image
               src={cafesurferPic}
-              height={332}
-              width={600}
-              alt="Cafesurfers"
-            ></Image>
-          </a>
-        </div>
-        <div className="m-2 p-2 text-center">
-          <a
-            className="cursor-pointer"
-            onClick={() => {
-              setOpenModal(true),
-                setImage(hjalmarxyzPic),
-                setHeight(332),
-                setWidth(600),
-                setTitle("hjalmar.xyz"),
-                setDescription(
-                  "Hjalmar.xyz (this website) is quickly trown together with JavaScript/Nextjs/Headlessui/tailwindcss, I'll update it when time allows."
-                ),
-                setLink("");
-            }}
-          >
-            <Image
-              src={hjalmarxyzPic}
               height={332}
               width={600}
               alt="Cafesurfers"
