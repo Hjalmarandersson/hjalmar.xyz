@@ -16,14 +16,20 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>hjalmar.xyz</title>
-        <meta name="description" content="Hompage of Hjalmar Andersson" />
+        <title>Hjalmar Andersson (@hjalmarxyz)</title>
+        <meta
+          name="description"
+          property="og:description"
+          content="Homepage of Hjalmar Andersson"
+        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         ></meta>
         <meta name="keywords" content="developer, engineer, programmer" />
         <meta property="og:title" content="hjalmar.xyz" />
+        <meta name="image" property="og:image" content="/hjalmar-ogimage.jpg" />
+        <link rel="icon" href="/favicon.ico" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hjalmar.xyz" />
         <meta charSet="utf-8"></meta>
