@@ -1,18 +1,22 @@
 import Head from "next/head";
-import Nav from "../components/Nav";
-import Hero from "../components/Hero";
+import ShortPresentation from "../components/ShortPresentation";
 import Projects from "../components/Projects";
 import Modal from "../components/Modal";
 import { useState } from "react";
+import BlogPostGrid from "../components/BlogPostGrid";
+import fs from "fs";
+import matter from "gray-matter";
 
-export default function Home() {
+export default function Home({ posts, projects }) {
   const [openModal, setOpenModal] = useState(false);
   const [image, setImage] = useState("");
-  const [height, setHeight] = useState(0);
-  const [width, setWidth] = useState(0);
+  const [secondImage, setSecondImage] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [link, setLink] = useState("");
+  const [status, setStatus] = useState("");
+  const [videoLink, setVideoLink] = useState("");
+
   return (
     <>
       <Head>
@@ -35,32 +39,68 @@ export default function Home() {
         <meta charSet="utf-8"></meta>
         <meta name="language" content="English"></meta>
       </Head>
-      <div className="bg-black flex flex-col items-center h-screen w-full">
-        <Nav />
-        <Hero />
+      <div className="bg-black flex flex-col items-center min-h-screen">
+        <ShortPresentation />
+        {/* <BlogPostGrid posts={posts} />  TODO!! */}
         <Projects
           setImage={setImage}
-          setHeight={setHeight}
-          setWidth={setWidth}
+          setSecondImage={setSecondImage}
           setOpenModal={setOpenModal}
           setTitle={setTitle}
           setDescription={setDescription}
           setLink={setLink}
+          setStatus={setStatus}
+          setVideoLink={setVideoLink}
+          projects={projects}
         />
         {openModal && (
           <Modal
             image={image}
-            height={height}
-            width={width}
-            setImage={setImage}
+            secondImage={secondImage}
             openModal={openModal}
             setOpenModal={setOpenModal}
             title={title}
             description={description}
             link={link}
+            status={status}
+            videoLink={videoLink}
           />
         )}
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Get all our posts
+
+  const postFiles = fs.readdirSync("posts");
+  const posts = postFiles.map((fileName) => {
+    const post = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
+    const { data: frontmatter } = matter(readFile);
+
+    return {
+      post,
+      frontmatter,
+    };
+  });
+  const projectFiles = fs.readdirSync("projects");
+  const projects = projectFiles.map((fileName) => {
+    const project = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`projects/${fileName}`, "utf-8");
+    const { data: frontmatter } = matter(readFile);
+
+    return {
+      project,
+      frontmatter,
+    };
+  });
+
+  return {
+    props: {
+      posts,
+      projects,
+    },
+  };
 }

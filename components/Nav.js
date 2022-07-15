@@ -4,7 +4,7 @@ import profilepic from "/public/hjalmar_bw.jpg";
 
 const Nav = () => {
   return (
-    <div className="fixed h-auto p-2 z-10 flex w-full shadow-sm justify-center bg-inherit">
+    <header className="fixed h-auto p-2 z-10 flex w-full shadow-sm justify-center bg-black">
       <div className="flex flex-row justify-center items-center">
         <Image
           src={profilepic}
@@ -20,7 +20,7 @@ const Nav = () => {
           </a>
         </Link>
       </div>
-    </div>
+    </header>
   );
 };
 
