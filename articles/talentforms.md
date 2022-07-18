@@ -6,6 +6,13 @@ mainImage: /talentforms-1.jpg
 secondImage: /talentforms-2.jpg
 link: https://github.com/Hjalmarandersson/talentforms
 videoLink: https://youtu.be/xZKuQAkxb-U?t=54
+tech:
+  - JavaScript
+  - jQuery
+  - Bootstrap
+  - NoSQL(Firebase)
 status: offline
-date: "2021-09-22"
+date: "2021-04-25"
 ---
+
+# The main content

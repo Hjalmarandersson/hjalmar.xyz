@@ -1,4 +1,4 @@
-const shortPresentation = () => {
+const ShortPresentation = () => {
   return (
     <div className="flex flex-col max-w-2xl mt-32 mb-10 mx-7 text-center">
       <p className="my-auto">
@@ -9,4 +9,4 @@ const shortPresentation = () => {
   );
 };
 
-export default shortPresentation;
+export default ShortPresentation;

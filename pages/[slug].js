@@ -1,10 +1,12 @@
 import fs from "fs";
 import matter from "gray-matter";
 import md from "markdown-it";
+import Nav from "../components/Nav";
+import Menu from "../components/Menu";
+import { useState } from "react";
 
 export async function getStaticPaths() {
-  // Retrieve all our slugs
-  const files = fs.readdirSync("posts");
+  const files = fs.readdirSync("articles");
   const paths = files.map((fileName) => ({
     params: {
       slug: fileName.replace(".md", ""),
@@ -18,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const fileName = fs.readFileSync(`posts/${slug}.md`, "utf-8");
+  const fileName = fs.readFileSync(`articles/${slug}.md`, "utf-8");
   const { data: frontmatter, content } = matter(fileName);
   return {
     props: {
@@ -29,10 +31,16 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export default function PostPage({ frontmatter, content }) {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
-    <div className="prose mx-auto">
-      <h1>{frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-    </div>
+    <>
+      {openMenu && <Menu setOpenMenu={setOpenMenu} />}
+      <Nav setOpenMenu={setOpenMenu} />
+      <div className="prose mx-auto mt-32 text-center text-white">
+        coming soon
+        {/* <h1 className="text-white">{frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} /> */}
+      </div>
+    </>
   );
 }

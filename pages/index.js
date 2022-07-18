@@ -1,13 +1,14 @@
 import Head from "next/head";
-import ShortPresentation from "../components/ShortPresentation";
-import Projects from "../components/Projects";
+import Articles from "../components/Articles";
 import Modal from "../components/Modal";
 import { useState } from "react";
-import BlogPostGrid from "../components/BlogPostGrid";
 import fs from "fs";
 import matter from "gray-matter";
+import Menu from "../components/Menu";
+import Nav from "../components/Nav";
+import ShortPresentation from "../components/ShortPresentation";
 
-export default function Home({ posts, projects }) {
+export default function Home({ articles }) {
   const [openModal, setOpenModal] = useState(false);
   const [image, setImage] = useState("");
   const [secondImage, setSecondImage] = useState("");
@@ -16,6 +17,8 @@ export default function Home({ posts, projects }) {
   const [link, setLink] = useState("");
   const [status, setStatus] = useState("");
   const [videoLink, setVideoLink] = useState("");
+  const [tech, setTech] = useState([]);
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <>
@@ -39,19 +42,23 @@ export default function Home({ posts, projects }) {
         <meta charSet="utf-8"></meta>
         <meta name="language" content="English"></meta>
       </Head>
+      {openMenu && <Menu setOpenMenu={setOpenMenu} />}
       <div className="bg-black flex flex-col items-center min-h-screen">
+        <Nav setOpenMenu={setOpenMenu} />
         <ShortPresentation />
-        {/* <BlogPostGrid posts={posts} />  TODO!! */}
-        <Projects
-          setImage={setImage}
+        <Articles
           setSecondImage={setSecondImage}
+          setImage={setImage}
           setOpenModal={setOpenModal}
           setTitle={setTitle}
           setDescription={setDescription}
           setLink={setLink}
           setStatus={setStatus}
+          status={status}
           setVideoLink={setVideoLink}
-          projects={projects}
+          articles={articles}
+          setTech={setTech}
+          tech={tech}
         />
         {openModal && (
           <Modal
@@ -59,6 +66,8 @@ export default function Home({ posts, projects }) {
             secondImage={secondImage}
             openModal={openModal}
             setOpenModal={setOpenModal}
+            setTech={setTech}
+            tech={tech}
             title={title}
             description={description}
             link={link}
@@ -72,35 +81,21 @@ export default function Home({ posts, projects }) {
 }
 
 export async function getStaticProps() {
-  // Get all our posts
-
-  const postFiles = fs.readdirSync("posts");
-  const posts = postFiles.map((fileName) => {
-    const post = fileName.replace(".md", "");
-    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
+  const files = fs.readdirSync("articles");
+  const articles = files.map((fileName) => {
+    const article = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`articles/${fileName}`, "utf-8");
     const { data: frontmatter } = matter(readFile);
 
     return {
-      post,
-      frontmatter,
-    };
-  });
-  const projectFiles = fs.readdirSync("projects");
-  const projects = projectFiles.map((fileName) => {
-    const project = fileName.replace(".md", "");
-    const readFile = fs.readFileSync(`projects/${fileName}`, "utf-8");
-    const { data: frontmatter } = matter(readFile);
-
-    return {
-      project,
+      article,
       frontmatter,
     };
   });
 
   return {
     props: {
-      posts,
-      projects,
+      articles,
     },
   };
 }

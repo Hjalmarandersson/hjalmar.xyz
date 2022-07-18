@@ -5,6 +5,12 @@
 html{
     background-color: black;
     font-family: monospace;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 a, p, h1, h2, h3, h4, h5, h6,button {

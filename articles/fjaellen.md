@@ -6,6 +6,12 @@ mainImage: /fjaellen-1.jpg
 secondImage: /fjaellen-2.jpg
 link: https://fjaellen.com
 videoLink: null
+tech:
+  - NextJS
+  - Mapbox
+  - NoSQL(Firebase)
 status: online
-date: "2022-06-02"
+date: "2022-05-20"
 ---
+
+# The main content

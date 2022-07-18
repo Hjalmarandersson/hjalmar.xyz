@@ -6,6 +6,12 @@ mainImage: /cafesurfers-1.jpg
 secondImage: /cafesurfers-2.jpg
 link: https://github.com/Hjalmarandersson/cafesurfer
 videoLink: https://youtu.be/iVquH_PmRis?t=38
+tech:
+  - JavaScript
+  - Mapbox
+  - NoSQL(Firebase)
 status: offline
 date: "2021-09-22"
 ---
+
+# The main content
